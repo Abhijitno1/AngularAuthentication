@@ -1,0 +1,16 @@
+﻿<div ng-show="isUserAuthenticated">
+    <form id="logoutForm" class="navbar-right" method="post" action="/Account/Logoff">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="/Account/Manage" title="Manage">Hello {{userName}}</a>
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+    </form>
+</div>
+<div ng-hide="isUserAuthenticated">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a id="registerLink" href="/Account/Register">Register</a></li>
+        <li><a id="loginLink" href="/Account/Login">Log in</a></li>
+    </ul>
+</div>
