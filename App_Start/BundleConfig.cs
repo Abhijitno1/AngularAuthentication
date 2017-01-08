@@ -29,6 +29,9 @@ namespace AngularAuthentication
 
             bundles.Add(new ScriptBundle("~/bundles/AngularApp").Include(
               "~/ngScripts/app.js",
+              "~/ngScripts/controllers/about.js",
+              "~/ngScripts/controllers/index.js",
+              "~/ngScripts/controllers/register.js",
               "~/ngScripts/controllers/landing-page.js"));
         }
     }

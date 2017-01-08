@@ -1,0 +1,30 @@
+﻿<h2>Register</h2>
+
+<form method="post" action="Account/register" class="form-horizontal" role="form">
+    <h4>Create a new account.</h4>
+    <hr />
+    <div class="validation-summary-valid"></div>
+    <div class="form-group">
+        <label for="UserName" class="col-md-2 control-label">User name</label>
+            <div class="col-md-10">
+                <input type="text" name="UserName" class="form-control" />
+            </div>
+</div>
+    <div class="form-group">
+        <label for="Password" class="col-md-2 control-label">Password</label>
+            <div class="col-md-10">
+                <input type="password" name="Password" class="form-control" />
+            </div>
+</div>
+    <div class="form-group">
+        <label for="ConfirmPassword" class="col-md-2 control-label">Confirm password</label>
+        <div class="col-md-10">
+            <input type="password" name="ConfirmPassword" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+</form>
