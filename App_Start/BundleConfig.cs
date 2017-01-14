@@ -31,6 +31,7 @@ namespace AngularAuthentication
               "~/ngScripts/app.js",
               "~/ngScripts/controllers/about.js",
               "~/ngScripts/controllers/index.js",
+              "~/ngScripts/controllers/login.js",
               "~/ngScripts/controllers/register.js",
               "~/ngScripts/controllers/landing-page.js"));
         }

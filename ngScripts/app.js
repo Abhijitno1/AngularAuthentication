@@ -13,6 +13,10 @@ app.config(function ($routeProvider) {
             //controller: 'about',
             templateUrl: '/ngViews/contact.html'
         })
+        .when('/Login', {
+            controller: 'login',
+            templateUrl: '/ngViews/login.html'
+        })
         .when('/Register', {
             controller: 'register',
             templateUrl: '/ngViews/register.html'
