@@ -1,4 +1,4 @@
-﻿var app = angular.module('AngularAuth', ['ngRoute']);
+﻿var app = angular.module('AngularAuth', ['ngRoute', 'ngCookies']);
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
@@ -24,4 +24,14 @@ app.config(function ($routeProvider) {
         .otherwise({
             redirectTo: '/'
         })
+});
+
+app.run(function ($rootScope, $location, $cookieStore, $http) {
+    if (!$rootScope.globals) $rootScope.globals = {};
+    /*
+    $rootScope.on('$locationChangeStart', function (event, next, current) {
+        if ($location.path() !== '/login' && !$rootScope.globals.currentUser)
+            $location.path('/login');
+    });
+    */
 });

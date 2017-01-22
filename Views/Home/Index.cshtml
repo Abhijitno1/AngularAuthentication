@@ -29,3 +29,16 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+<div class="well">
+    <button id="btnCallAPI">Call API for Test</button>
+</div>
+<script>
+    $(function () {
+        $('#btnCallAPI').click(function () {
+            var data = { UserName: 'shivani', Password: 'shivani', RememberMe: false };
+            $.post("api/NGAccount/Login", data, function (response) {
+                console.debug('response = ' + response);
+            });
+        });
+    });
+</script>

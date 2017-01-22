@@ -1,11 +1,11 @@
 ﻿<div ng-controller="landingPage">
     <div ng-show="isUserAuthenticated">
-        <form id="logoutForm" class="navbar-right" method="post" action="/Account/Logoff">
+        <form id="logoutForm" class="navbar-right" method="post" action="/NGAccount/Logoff">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/Account/Manage" title="Manage">Hello {{userName}}</a>
+                    <a href="/NGAccount/Manage" title="Manage">Hello {{userName}}</a>
                 </li>
-                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                <li><a href="#" ng-click="logoff()">Log off</a></li>
             </ul>
         </form>
     </div>
