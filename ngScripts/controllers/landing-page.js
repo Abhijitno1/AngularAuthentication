@@ -1,9 +1,13 @@
-﻿angular.module('AngularAuth').controller('landingPage', function ($scope, $rootScope) {
-    //alert('Angular is working');
-    $scope.isUserAuthenticated = $rootScope.globals.currentUser != null;
-    $scope.userName = $rootScope.globals.currentUser;
+﻿angular.module('AngularAuth').controller('landingPage', function ($scope, $rootScope, $location, dataService) {
+    console.log('landing page controller loaded');
+    $rootScope.$watch('globals.currentUser', function () {
+        $scope.isUserAuthenticated = $rootScope.globals.currentUser != null;
+    });
 
     $scope.logoff = function () {
-        alert('logging off');
+        dataService.doLogOff()
+        .success(function () {
+            $location.url('/');
+        });
     };
 });

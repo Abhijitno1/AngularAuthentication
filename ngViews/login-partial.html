@@ -3,7 +3,7 @@
         <form id="logoutForm" class="navbar-right" method="post" action="/NGAccount/Logoff">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/NGAccount/Manage" title="Manage">Hello {{userName}}</a>
+                    <a href="/NGAccount/Manage" title="Manage">Hello {{globals.currentUser}}</a>
                 </li>
                 <li><a href="#" ng-click="logoff()">Log off</a></li>
             </ul>

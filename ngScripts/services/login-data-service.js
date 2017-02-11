@@ -1,19 +1,30 @@
 ﻿angular.module('AngularAuth').factory('dataService', function ($http, $cookieStore, $rootScope) {
-    var doLogin = function (loginViewModel) {
-        return $http.post('api/NGAccount/Login', loginViewModel)
-            .success(function (data, status, headers) {
-                if (data.success === true) {
-                    $rootScope.globals = {
-                        currentUser: data.userName
-                    };
-                    //$cookieStore.set('globals', 1);
-                }
-            });
-    };
 
     return {
-        doLogin : doLogin
-    }
+        doLogin: function (loginViewModel) {
+            var me = this;
+            return $http.post('api/NGAccount/Login', loginViewModel)
+                .success(function (data, status, headers) {
+                    if (data.success === true) {
+                        $rootScope.globals = {
+                            currentUser: data.userName
+                        };
+                        //$cookieStore.put('globals', $rootScope.globals);
+                    }
+                });
+        },
+        doLogOff: function () {
+            //$cookieStore.remove('globals');
+            return $http.get('api/NGAccount/LogOff')
+                .success(function (data, status, headers) {
+                    if (data.success === true) {
+                        $rootScope.globals = {};
+                        //$cookieStore.delete('globals');
+                    }
+                });
+        }
+    };
+
 });
 
 /*

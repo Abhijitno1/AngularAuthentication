@@ -27,7 +27,7 @@ app.config(function ($routeProvider) {
 });
 
 app.run(function ($rootScope, $location, $cookieStore, $http) {
-    if (!$rootScope.globals) $rootScope.globals = {};
+    $rootScope.globals = $cookieStore.get('globals') || {};
     /*
     $rootScope.on('$locationChangeStart', function (event, next, current) {
         if ($location.path() !== '/login' && !$rootScope.globals.currentUser)
