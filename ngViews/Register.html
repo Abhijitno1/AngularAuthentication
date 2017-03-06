@@ -1,40 +1,43 @@
 ﻿<h2>Register</h2>
 
-<form name="frmRegister" method="post" action="Account/register" class="form-horizontal" role="form" novalidate>
+<form name="frmRegister" method="post" class="form-horizontal" role="form" novalidate ng-submit="registerUser()">
     <h4>Create a new account.</h4>
     <hr />
     <div class="validation-summary-valid"></div>
     <div class="form-group">
         <label for="UserName" class="col-md-2 control-label">User name</label>
-            <div class="col-md-10">
-                <input type="text" name="UserName" ng-nodel="UserName" class="form-control" />
-                <span class="field-validation-error" ng-show="frmRegister.UserName.$dirty && frmRegister.UserName.$invalid">
-                    <span class="input-validation-error" ng-show="frmRegister.UserName.$error.required">UserName is required</span>
-                </span>
-            </div>
+        <div class="col-md-10">
+            <input type="text" name="UserName" ng-nodel="UserName" class="form-control" required
+                   ng-class="{'input-validation-error': frmRegister.UserName.$invalid}" />
+            <span class="field-validation-error" ng-show="frmRegister.UserName.$dirty && frmRegister.UserName.$error.required">
+                UserName is required
+            </span>
         </div>
+    </div>
     <div class="form-group">
         <label for="Password" class="col-md-2 control-label">Password</label>
-            <div class="col-md-10">
-                <input type="password" name="Password" ng-model="Password" class="form-control" />
-                <span class="field-validation-error" ng-show="frmRegister.Password.$dirty && frmRegister.Password.$invalid">
-                    <span class="input-validation-error" ng-show="frmRegister.Password.$error.required">Password is required</span>
-                </span>
-            </div>
+        <div class="col-md-10">
+            <input type="password" name="Password" ng-model="Password" class="form-control" required
+                   ng-class="{'input-validation-error': frmRegister.Password.$invalid}" />
+            <span class="field-validation-error" ng-show="frmRegister.Password.$dirty && frmRegister.Password.$error.required">
+                Password is required
+            </span>
         </div>
+    </div>
     <div class="form-group">
         <label for="ConfirmPassword" class="col-md-2 control-label">Confirm password</label>
         <div class="col-md-10">
-            <input type="password" name="ConfirmPassword" class="form-control" />
-            <span class="field-validation-error" ng-show="frmRegister.ConfirmPassword.$dirty && frmRegister.ConfirmPassword.$invalid">
-                <span class="input-validation-error" ng-show="frmRegister.ConfirmPassword.$error.required">Confirm Password is required</span>
+            <input type="password" name="ConfirmPassword" class="form-control" required
+                   ng-class="{'input-validation-error': frmRegister.ConfirmPassword.$invalid}" />
+            <span class="field-validation-error" ng-show="frmRegister.ConfirmPassword.$dirty && frmRegister.ConfirmPassword.$error.required">
+                Confirm Password is required
             </span>
         </div>
-</div>
+    </div>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="button" class="btn btn-default" value="Register" ng-disabled="!frmRegister.$invalid" />
+            <input type="submit" class="btn btn-default" value="Register" ng-disabled="frmRegister.$invalid" />
         </div>
     </div>
 </form>
