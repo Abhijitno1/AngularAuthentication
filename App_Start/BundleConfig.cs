@@ -34,7 +34,10 @@ namespace AngularAuthentication
               "~/ngScripts/controllers/login.js",
               "~/ngScripts/controllers/register.js",
               "~/ngScripts/controllers/landing-page.js",
-              "~/ngScripts/services/login-data-service.js"));
+              "~/ngScripts/services/login-data-service.js",
+              "~/ngScripts/controllers/playlists-view.js",
+              "~/ngScripts/controllers/playlist-videos.js",
+              "~/ngScripts/services/utube-service.js"));
         }
     }
 }

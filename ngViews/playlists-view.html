@@ -1,0 +1,15 @@
+﻿    <!--
+        ref: https://devdactic.com/ionic-youtube-rest-api/
+        https://demos.creative-tim.com/bs3/paper-dashboard/notifications.html 
+    -->
+    <h2>My Playlists</h2>
+    <div class="list-group">
+        <a href="#" ng-repeat="list in playlists" class="list-group-item" ng-click="openPlaylist(list.id)">
+            <img class="img-thumbnail" ng-src="{{list.snippet.thumbnails.standard.url}}" width="128" height="96" style="display:inline-block;" />
+            <div style="display:inline-block;">
+                <h2>{{ list.snippet.title }}</h2>
+                <p>{{ list.snippet.publishedAt | date:'dd/MM/yyyy' }}</p>
+            </div>
+        </a>
+    </div>
+

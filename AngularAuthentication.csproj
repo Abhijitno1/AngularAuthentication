@@ -195,11 +195,16 @@
     <Content Include="ngScripts\controllers\index.js" />
     <Content Include="ngScripts\controllers\landing-page.js" />
     <Content Include="ngScripts\controllers\login.js" />
+    <Content Include="ngScripts\controllers\playlist-videos.js" />
+    <Content Include="ngScripts\controllers\playlists-view.js" />
     <Content Include="ngScripts\controllers\register.js" />
+    <Content Include="ngScripts\services\utube-service.js" />
     <Content Include="ngScripts\services\login-data-service.js" />
     <Content Include="ngViews\about.html" />
     <Content Include="ngViews\contact.html" />
     <Content Include="ngViews\home.html" />
+    <Content Include="ngViews\playlist-videos.html" />
+    <Content Include="ngViews\playlists-view.html" />
     <Content Include="ngViews\register.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

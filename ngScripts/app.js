@@ -21,9 +21,17 @@ app.config(function ($routeProvider) {
             controller: 'register',
             templateUrl: '/ngViews/register.html'
         })
+        .when('/playlists', {
+            controller: 'playlistsView',
+            templateUrl: '/ngViews/playlists-view.html'
+        })
+        .when('/videolist/:playlistId', {
+            controller: 'playlistVideos',
+            templateUrl: '/ngViews/playlist-videos.html'
+        })
         .otherwise({
             redirectTo: '/'
-        })
+        })   
 });
 
 app.run(function ($rootScope, $location, $cookieStore, $http) {
