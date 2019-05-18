@@ -22,6 +22,35 @@
                         //$cookieStore.delete('globals');
                     }
                 });
+        },
+        getOAuth2Token: function (loginViewModel) {
+            return $http.post('token', {
+                grant_type: 'password',
+                username: loginViewModel.UserName,
+                password: loginViewModel.Password
+            }, {
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                transformRequest: function (obj) {
+                    var str = [];
+                    for (var p in obj)
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                    return str.join("&");
+                }
+            })
+            .success(function (data, status, headers) {
+                if (data.token_type == 'bearer') {
+                    $rootScope.globals = {
+                        currentUser: 'shivani',
+                        access_token: data.access_token
+                    };
+                }
+            });
+        },
+        getProtectedData: function () {
+            var accessToken = $rootScope.globals.access_token;
+            return $http.get('api/NGAccount/ProtectedData', {
+                headers: { authorization: accessToken ? 'Bearer ' + accessToken : null }
+            });
         }
     };
 

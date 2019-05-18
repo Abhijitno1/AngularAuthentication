@@ -12,6 +12,7 @@ namespace AngularAuthentication.Controllers
         // GET: /Angular/
         public ActionResult Index()
         {
+            ViewBag.Message = "This is AngularJS version of Authentication Demo App.";
             return View();
         }
 	}

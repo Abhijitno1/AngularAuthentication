@@ -31,7 +31,7 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#/About">About</a></li>
                     <li><a href="#/Contact">Contact</a></li>
-                    <li><a href="#/playlists">Youtube Playlists</a></li>
+                    <li ng-show="globals.currentUser"><a href="#/playlists">Youtube Playlists</a></li>
                 </ul>
                 <ng-include src="'/ngViews/login-partial.html'"></ng-include>
             </div>

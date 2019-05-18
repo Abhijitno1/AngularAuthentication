@@ -1,8 +1,8 @@
 ﻿<h2>Videos in Playlist</h2>
 <div class="list-group">
     <a href="#" ng-repeat="video in videos" class="list-group-item" ng-click="openVideo(video)">
-        <img class="img-thumbnail" ng-src="{{video.snippet.thumbnails.standard.url}}" width="128" height="96" style="display:inline-block;" />
-        <div style="display:inline-block;">
+        <img class="img-thumbnail" ng-src="{{video.snippet.thumbnails.standard.url}}" width="128" height="96" style="display:inline-block;vertical-align:top;margin-top:20px;" />
+        <div style="display:inline-block; width: 88%">
             <h2>{{ video.snippet.title }}</h2>
             <p>{{ video.snippet.description }}</p>
         </div>

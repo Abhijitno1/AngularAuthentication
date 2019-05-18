@@ -11,6 +11,14 @@
         .success(function (data, status, headers) {
             if (data.success === true)
                 $location.url('/');
+            else
+                $scope.serverError = data.message;
+        })
+        .error(function (xcpt, statusCode) {
+            if (xcpt.exceptionType == 'System.ApplicationException')
+                $scope.serverError = xcpt.exceptionMessage;
+            else
+                $scope.serverError = 'A server error has occurred';
         });
     };
 });

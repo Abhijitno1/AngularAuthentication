@@ -22,7 +22,7 @@ namespace AngularAuthentication.Controllers
 
         public AccountController(UserManager<ApplicationUser> userManager)
         {
-            UserManager = userManager;
+            UserManager = userManager;            
         }
 
         public UserManager<ApplicationUser> UserManager { get; private set; }
@@ -83,7 +83,10 @@ namespace AngularAuthentication.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    if (Request.QueryString.AllKeys.Contains("ReturnUrl"))
+                        return Redirect(Request.QueryString["ReturnUrl"]);
+                    else
+                        return RedirectToAction("Index", "Home");
                 }
                 else
                 {

@@ -9,9 +9,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace AngularAuthentication
 {
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     public class NGAccountController : ApiController
     {
         public NGAccountController()
@@ -161,6 +163,13 @@ namespace AngularAuthentication
         //public void Delete(int id)
         //{
         //}
+
+        [Authorize]
+        [HttpGet, Route("api/NGAccount/ProtectedData")]
+        public IHttpActionResult ProtectedData()
+        {
+            return Ok(new[] { "Amar", "Akbar", "Anthony" });
+        }
 
         #region Helpers
         // Used for XSRF protection when adding external logins
